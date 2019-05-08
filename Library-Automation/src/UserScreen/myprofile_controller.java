@@ -5,7 +5,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -13,6 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -47,15 +52,23 @@ public class myprofile_controller  {
     @FXML
     public Label lblusername1;
 
+    Stage stage = new Stage();
+    Stage stage2 = new Stage();
+    Stage stage3 = new Stage();
 
-    public void load(ActionEvent event) {
+
+    public void gotomyprofilecontroller(String text){
+
+        lblusername1.setText(text);
+    }
+    public void load(ActionEvent event)  {
         Login.DBConnection connectionClass = new Login.DBConnection();
         Connection connection = connectionClass.connect();
 
         try {
 
             data = FXCollections.observableArrayList();
-            ResultSet rs = connection.createStatement().executeQuery("select * from users");
+            ResultSet rs = connection.createStatement().executeQuery("select * from users where Username='"+lblusername1.getText()+"'");
 
             while(rs.next())
             {
@@ -84,9 +97,57 @@ public class myprofile_controller  {
 
         lblusername1.setText(text);
     }
+    public void goback(ActionEvent event) throws IOException
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader2=new FXMLLoader(getClass().getResource("UserMainScreen.fxml"));
+        Parent root2 = loader2.load();
+        User_Screen_Controller thirdController = loader2.getController();
+        thirdController.gotousermainscreen(lblusername1.getText());
+
+        stage.setTitle("User Screen");
+        Scene scene2 = new Scene(root2);
+        stage.setScene(scene2);
+        stage.show();
+    }
+    public void logoutum1(ActionEvent event) throws IOException
+    {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent p1 = FXMLLoader.load(getClass().getResource("../Login/User_Login.fxml"));
+        Scene scnSignin = new Scene(p1);
+
+        stage.setTitle("Home Page");
+        stage.setScene(scnSignin);
+        stage.show();
+    }
+    public void update (ActionEvent event) throws IOException
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader2=new FXMLLoader(getClass().getResource("UpdateProfile.fxml"));
+        Parent root3 = loader2.load();
+        Update_Profile_Controller fourthController = loader2.getController();
+        fourthController.gotousermainscreen2(lblusername1.getText());
+
+        stage2.setTitle("User Screen");
+        Scene scene2 = new Scene(root3);
+        stage2.setScene(scene2);
+        stage2.show();
+    }
 
 
+    public void gotomybooks (ActionEvent event) throws IOException
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader2=new FXMLLoader(getClass().getResource("../UserScreen/Mybooks.fxml"));
+        Parent root4 = loader2.load();
+        Mybooks_controller fourthController = loader2.getController();
+        fourthController.gotousermainscreen4(lblusername1.getText());
 
+        stage3.setTitle("User Screen");
+        Scene scene2 = new Scene(root4);
+        stage3.setScene(scene2);
+        stage3.show();
+    }
 
 
 }

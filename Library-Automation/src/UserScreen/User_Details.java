@@ -66,7 +66,7 @@ public class User_Details {
     }
 
     //setters
-    public void setId(String value)
+    public void setid(String value)
     {
         id.set(value);
     }
@@ -102,6 +102,10 @@ public class User_Details {
     {
         Color.set(value);
     }
+
+
+
+
     public StringProperty idProperty()
     {
         return id;

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="626.0" style="-fx-background-color: #FDF5E6;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.user_details_controller">
+   <children>
+      <Button layoutX="276.0" layoutY="193.0" mnemonicParsing="false" onAction="#showusers" style="-fx-border-color: #FDF5E6;" text="Show users" />
+      <Button layoutX="264.0" layoutY="359.0" mnemonicParsing="false" onAction="#showuserbackup" prefHeight="26.0" prefWidth="116.0" style="-fx-border-color: #FDF5E6;" text="Show User Backup" />
+      <TableView fx:id="tableuser" layoutX="1.0" layoutY="40.0" prefHeight="147.0" prefWidth="626.0" style="-fx-border-color: #FDF5E6; -fx-background-color: #FFFAFA;">
+        <columns>
+          <TableColumn fx:id="Columnid" prefWidth="47.20001149177551" style="-fx-border-color: #FDF5E6;" text="id" />
+          <TableColumn fx:id="Columnusername" prefWidth="70.39996719360352" style="-fx-border-color: #FDF5E6;" text="Username" />
+            <TableColumn fx:id="Columnfirstname" prefWidth="73.60003662109375" style="-fx-border-color: #FDF5E6;" text="FirstName" />
+            <TableColumn fx:id="Columnlastname" prefWidth="81.60002136230469" style="-fx-border-color: #FDF5E6;" text="LastName" />
+            <TableColumn fx:id="Columnsex" prefWidth="49.5999755859375" style="-fx-border-color: #FDF5E6;" text="Sex" />
+            <TableColumn fx:id="Columnpassword" prefWidth="72.0" style="-fx-border-color: #FDF5E6;" text="Password" />
+            <TableColumn fx:id="Columnphone" prefWidth="72.0" style="-fx-border-color: #FDF5E6;" text="Phone" />
+            <TableColumn fx:id="Columnemail" prefWidth="71.20013427734375" style="-fx-border-color: #FDF5E6;" text="Email" />
+            <TableColumn fx:id="Columncolor" prefWidth="71.20013427734375" style="-fx-border-color: #FDF5E6;" text="Color" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tablebackup" layoutX="1.0" layoutY="231.0" prefHeight="131.0" prefWidth="626.0" style="-fx-background-color: #FFFAFA; -fx-border-color: #FDF5E6;">
+        <columns>
+          <TableColumn fx:id="username_backup" prefWidth="72.79999089241028" style="-fx-border-color: #FDF5E6;" text="username_backup" />
+          <TableColumn fx:id="firstname_backup" prefWidth="101.5999755859375" style="-fx-border-color: #FDF5E6;" text="firstname_backup" />
+            <TableColumn fx:id="lastname_backup" prefWidth="104.0" style="-fx-border-color: #FDF5E6;" text="lastname_backup" />
+            <TableColumn fx:id="password_backup" prefWidth="96.0" style="-fx-border-color: #FDF5E6;" text="password_backup" />
+            <TableColumn fx:id="phone_backup" prefWidth="88.0" style="-fx-border-colo: #FDF5E6;" text="phone_backup" />
+            <TableColumn fx:id="email_backup" prefWidth="83.99996948242188" style="-fx-border-color: #FDF5E6;" text="email_backup" />
+            <TableColumn fx:id="color_backup" prefWidth="81.5999755859375" style="-fx-border-color: #FDF5E6;" text="color_backup" />
+        </columns>
+      </TableView>
+      <Button layoutX="561.0" layoutY="1.0" mnemonicParsing="false" onAction="#backgo" style="-fx-border-color: #FDF5E6;" text="Back" />
+      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="236.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/icons8-user-groups-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="228.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/icons8-data-backup-50.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

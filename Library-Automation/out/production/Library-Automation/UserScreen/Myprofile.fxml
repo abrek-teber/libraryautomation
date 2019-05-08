@@ -4,35 +4,44 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserScreen.myprofile_controller">
+<AnchorPane prefHeight="400.0" prefWidth="596.0" style="-fx-background-color: #FDF5E6;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserScreen.myprofile_controller">
    <children>
-      <Button fx:id="button3" layoutX="18.0" layoutY="215.0" mnemonicParsing="false" text="Button" />
-      <Button fx:id="button4" layoutX="18.0" layoutY="259.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="255.0" layoutY="36.0" text="My Profile">
+      <Button layoutX="12.0" layoutY="226.0" mnemonicParsing="false" onAction="#gotomybooks" prefHeight="26.0" prefWidth="62.0" style="-fx-border-color: #FDF5E6;" text="My Books">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Label layoutX="277.0" layoutY="36.0" text="My Profile">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tableUser" layoutX="73.0" layoutY="107.0" prefHeight="200.0" prefWidth="526.0">
+      <TableView fx:id="tableUser" layoutX="73.0" layoutY="107.0" prefHeight="200.0" prefWidth="526.0" style="-fx-background-color: #FFFAFA; -fx-border-color: #FDF5E6;">
         <columns>
-          <TableColumn fx:id="Columnid" prefWidth="43.20001220703125" text="id" />
-          <TableColumn fx:id="Columnusername" prefWidth="67.199951171875" text="User Name" />
-            <TableColumn fx:id="Columnfirstname" prefWidth="70.4000244140625" text="First Name" />
-            <TableColumn fx:id="Columnlastname" prefWidth="64.0" text="Last Name" />
-            <TableColumn fx:id="Columnsex" prefWidth="34.4000244140625" text="Sex" />
-            <TableColumn fx:id="Columnpassword" prefWidth="63.99993896484375" text="Password" />
-            <TableColumn fx:id="Columnphone" prefWidth="56.79998779296875" text="Phone" />
-            <TableColumn fx:id="Columnemail" minWidth="5.5999755859375" prefWidth="70.4000244140625" text="Email" />
-            <TableColumn fx:id="Columncolor" prefWidth="56.00006103515625" text="Color" />
+          <TableColumn fx:id="Columnid" prefWidth="43.20001220703125" style="-fx-border-color: #FDF5E6;" text="id" />
+          <TableColumn fx:id="Columnusername" prefWidth="79.20008087158203" style="-fx-border-color: #FDF5E6;" text="User Name" />
+            <TableColumn fx:id="Columnfirstname" prefWidth="71.199951171875" style="-fx-border-color: #FDF5E6;" text="First Name" />
+            <TableColumn fx:id="Columnlastname" prefWidth="68.79998779296875" style="-fx-border-color: #FDF5E6;" text="Last Name" />
+            <TableColumn fx:id="Columnsex" prefWidth="33.5999755859375" style="-fx-border-color: #FDF5E6;" text="Sex" />
+            <TableColumn fx:id="Columnpassword" prefWidth="70.4000244140625" style="-fx-border-color: #FDF5E6;" text="Password" />
+            <TableColumn fx:id="Columnphone" prefWidth="49.5999755859375" style="-fx-border-color: #FDF5E6;" text="Phone" />
+            <TableColumn fx:id="Columnemail" minWidth="5.5999755859375" prefWidth="57.599945068359375" style="-fx-border-color: #FDF5E6;" text="Email" />
+            <TableColumn fx:id="Columncolor" prefWidth="56.00006103515625" style="-fx-border-color: #FDF5E6;" text="Color" />
         </columns>
       </TableView>
-      <Button fx:id="button2" layoutX="18.0" layoutY="168.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="18.0" layoutY="126.0" mnemonicParsing="false" onAction="#load" text="Button" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Go Back" />
-      <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Logout" />
-      <Label fx:id="lblusername1" layoutX="14.0" layoutY="57.0" text="Label" />
+      <Button fx:id="button2" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" onAction="#update" style="-fx-border-color: #FDF5E6;" text="Update" />
+      <Button layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#load" prefHeight="27.0" prefWidth="58.0" style="-fx-border-color: #FDF5E6;" text="Profile" />
+      <Button layoutX="523.0" layoutY="18.0" mnemonicParsing="false" onAction="#goback" style="-fx-border-color: #FDF5E6;" text="Go Back" />
+      <Button layoutX="13.0" layoutY="267.0" mnemonicParsing="false" onAction="#logoutum1" prefHeight="27.0" prefWidth="58.0" style="-fx-border-color: #FDF5E6;" text="Logout" />
+      <Label fx:id="lblusername1" layoutX="14.0" layoutY="14.0" text="Label" />
+      <ImageView fitHeight="51.0" fitWidth="58.0" layoutX="205.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/icons8-circled-user-64.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -39,6 +39,32 @@ public class User_Screen_Controller   {
 
         lblusername.setText(text);
     }
+    public void logoutt(ActionEvent event) throws IOException
+    {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent p1 = FXMLLoader.load(getClass().getResource("../Login/User_Login.fxml"));
+        Scene scnSignin = new Scene(p1);
+
+        stage.setTitle("User Login");
+        stage.setScene(scnSignin);
+        stage.show();
+    }
+    public void books (ActionEvent event) throws IOException
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader2=new FXMLLoader(getClass().getResource("Allbooks.fxml"));
+        Parent root2 = loader2.load();
+        allbooks_controller thirdController = loader2.getController();
+        thirdController.gotousermainscreen6(lblusername.getText());
+
+        stage.setTitle("User Screen");
+        Scene scene2 = new Scene(root2);
+        stage.setScene(scene2);
+        stage.show();
+
+    }
+
+
 
 
 }

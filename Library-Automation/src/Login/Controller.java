@@ -2,10 +2,8 @@ package Login;
 
 import UserScreen.User_Screen_Controller;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,12 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 
 
 public class Controller  {
@@ -45,10 +41,12 @@ public class Controller  {
         stage.setScene(scnUserLogin);
         stage.show();
     }
+
+
     public void GoAdminLoginPage(ActionEvent event) throws IOException
     {
         ((Node)(event.getSource())).getScene().getWindow().hide();
-        Parent p1 = FXMLLoader.load(getClass().getResource("Admin_Login.fxml"));
+        Parent p1 = FXMLLoader.load(getClass().getResource("../admin/Admin_Login.fxml"));
         Scene scnAdminLogin = new Scene(p1);
 
         stage.setTitle("Admin Login");
@@ -59,6 +57,16 @@ public class Controller  {
     {
         ((Node)(event.getSource())).getScene().getWindow().hide();
         Parent p1 = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Scene scnBack = new Scene(p1);
+
+        stage.setTitle("Login");
+        stage.setScene(scnBack);
+        stage.show();
+    }
+    public void GoBack1(ActionEvent event) throws IOException
+    {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent p1 = FXMLLoader.load(getClass().getResource("User_Login.fxml"));
         Scene scnBack = new Scene(p1);
 
         stage.setTitle("Login");

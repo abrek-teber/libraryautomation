@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="708.0" prefWidth="600.0" style="-fx-background-color: #FDF5E6;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.book_details_controller">
+   <children>
+      <Label layoutX="267.0" layoutY="5.0" text="Book Details" />
+      <TableView fx:id="booklist" layoutY="33.0" prefHeight="130.0" prefWidth="600.0" style="-fx-background-color: #FFFAFA;">
+        <columns>
+          <TableColumn fx:id="Bookid" prefWidth="179.20001524686813" style="-fx-border-color: #FDF5E6;" text="Book ID" />
+          <TableColumn fx:id="Bookname" prefWidth="143.1999969482422" style="-fx-border-color: #FDF5E6;" text="Book Name" />
+            <TableColumn fx:id="Bookauthor" prefWidth="134.39996337890625" style="-fx-border-color: #FDF5E6;" text="Author" />
+            <TableColumn fx:id="Booktype" prefWidth="140.0001220703125" style="-fx-border-color: #FDF5E6;" text="Book Type" />
+        </columns>
+      </TableView>
+      <TextField fx:id="bookname" layoutX="126.0" layoutY="206.0" prefHeight="26.0" prefWidth="95.0" promptText="Book Name" />
+      <TextField fx:id="bookid" layoutX="25.0" layoutY="206.0" prefHeight="26.0" prefWidth="95.0" promptText="Book ID" />
+      <TextField fx:id="booktype" layoutX="333.0" layoutY="206.0" prefHeight="26.0" prefWidth="95.0" promptText="Book Type" />
+      <TextField fx:id="bookauthor" layoutX="228.0" layoutY="206.0" prefHeight="26.0" prefWidth="95.0" promptText="Author" />
+      <Button layoutX="193.0" layoutY="245.0" mnemonicParsing="false" onAction="#addbook" style="-fx-border-color: #FDF5E6;" text="Add Book" />
+      <Button layoutX="489.0" layoutY="252.0" mnemonicParsing="false" onAction="#bookdelete" prefHeight="26.0" prefWidth="69.0" style="-fx-border-color: #FDF5E6;" text="Delete" />
+      <TextField fx:id="boook" layoutX="480.0" layoutY="206.0" prefHeight="26.0" prefWidth="95.0" promptText="Book Name" />
+      <TableView fx:id="tableauthor" layoutX="9.0" layoutY="376.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFAFA;">
+        <columns>
+          <TableColumn fx:id="authorid" prefWidth="110.40001678466797" style="-fx-border-color: #FDF5E6;" text="authorid" />
+          <TableColumn fx:id="authorname" prefWidth="89.60000765323639" style="-fx-border-color: #FDF5E6;" text="authorname" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tablecategory" layoutX="324.0" layoutY="376.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFAFA;">
+        <columns>
+          <TableColumn fx:id="category_id" minWidth="0.0" prefWidth="101.5999755859375" style="-fx-border-color: #FDF5E6;" text="category_id" />
+          <TableColumn fx:id="category_name" prefWidth="98.40005493164062" style="-fx-border-color: #FDF5E6;" text="category_name" />
+        </columns>
+      </TableView>
+      <Button layoutX="215.0" layoutY="611.0" mnemonicParsing="false" onAction="#addauthor" prefHeight="27.0" prefWidth="53.0" style="-fx-border-color: #FDF5E6;" text="Add" />
+      <TextField fx:id="Authorid" layoutX="35.0" layoutY="597.0" promptText="authorid" />
+      <TextField fx:id="Authorname" layoutX="35.0" layoutY="639.0" promptText="authorname" />
+      <TextField fx:id="categoryname" layoutX="350.0" layoutY="639.0" promptText="category name" />
+      <TextField fx:id="categoryid" layoutX="350.0" layoutY="597.0" promptText="category id" />
+      <Button layoutX="528.0" layoutY="611.0" mnemonicParsing="false" onAction="#addcategories" prefHeight="27.0" prefWidth="53.0" style="-fx-border-color: #FDF5E6;" text="Add" />
+      <Button layoutX="216.0" layoutY="700.0" mnemonicParsing="false" onAction="#deleteauthorid" style="-fx-border-color: #FDF5E6;" text="Delete" />
+      <Button layoutX="529.0" layoutY="700.0" mnemonicParsing="false" onAction="#deletecategoryid" style="-fx-border-color: #FDF5E6;" text="Delete" />
+      <TextField fx:id="deletecategoryid" layoutX="350.0" layoutY="701.0" promptText="Category id" />
+      <TextField fx:id="deleteauthorid" layoutX="35.0" layoutY="701.0" promptText="author id" />
+      <Button layoutX="222.0" layoutY="462.0" mnemonicParsing="false" onAction="#showauthors" prefHeight="27.0" prefWidth="54.0" style="-fx-border-color: #FDF5E6;" text="Show" />
+      <Button layoutX="528.0" layoutY="475.0" mnemonicParsing="false" onAction="#showcategories" prefHeight="27.0" prefWidth="54.0" style="-fx-border-color: #FDF5E6;" text="Show" />
+      <Button layoutX="489.0" layoutY="163.0" mnemonicParsing="false" onAction="#showbooklist" style="-fx-border-color: #FDF5E6;" text="Show Book List" />
+      <Button layoutX="521.0" mnemonicParsing="false" onAction="#gogoback" prefHeight="27.0" prefWidth="53.0" style="-fx-border-color: #FDF5E6;" text="Back" />
+      <Separator layoutX="-7.0" layoutY="295.0" prefHeight="2.0" prefWidth="607.0" />
+      <Label layoutX="71.0" layoutY="355.0" text="Author Details" />
+      <Label layoutX="384.0" layoutY="355.0" text="Category Details" />
+      <Separator layoutX="293.0" layoutY="295.0" orientation="VERTICAL" prefHeight="430.0" prefWidth="0.0" />
+   </children>
+</AnchorPane>

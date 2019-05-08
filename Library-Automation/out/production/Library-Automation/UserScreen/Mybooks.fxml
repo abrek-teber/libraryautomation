@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FDF5E6;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserScreen.Mybooks_controller">
+   <children>
+      <TableView fx:id="MyBooksTable" layoutY="65.0" onMouseClicked="#displaySelected" prefHeight="249.0" prefWidth="600.0" style="-fx-background-color: #FFFAFA; -fx-border-color: #FDF5E6;">
+        <columns>
+          <TableColumn fx:id="books_userid" prefWidth="157.60003662109375" style="-fx-border-color: #FDF5E6;" text="User ID" />
+          <TableColumn fx:id="books_username" prefWidth="151.199951171875" style="-fx-border-color: #FDF5E6;" text="Username" />
+            <TableColumn fx:id="books_bookid" prefWidth="144.800048828125" style="-fx-border-color: #FDF5E6;" text="Book ID" />
+            <TableColumn fx:id="books_bookname" prefWidth="147.99993896484375" style="-fx-border-color: #FDF5E6;" text="Book Name" />
+        </columns>
+      </TableView>
+      <Button layoutX="512.0" layoutY="17.0" mnemonicParsing="false" onAction="#goback" style="-fx-border-color: #FDF5E6;" text="Go Back" />
+      <Label fx:id="lblusername6" layoutX="24.0" layoutY="13.0" text="Label" />
+      <Button layoutX="142.0" layoutY="332.0" mnemonicParsing="false" onAction="#ShowMyBooks" style="-fx-border-color: #FDF5E6;" text="Show My Books" />
+      <Label layoutX="256.0" layoutY="15.0" text="My Books">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="49.0" fitWidth="54.0" layoutX="193.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/icons8-books-64.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="381.0" layoutY="333.0" mnemonicParsing="false" onAction="#ReturnRentedBook" text="Return The Book" />
+      <Label fx:id="lblBookTitle" layoutX="107.0" layoutY="24.0" />
+   </children>
+</AnchorPane>
